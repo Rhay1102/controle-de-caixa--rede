@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Controle do Acampamento</title>
+
+<link rel="stylesheet" href="style.css">
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#67549b">
+</head>
+
+<body>
+
+<header>
+
+<img src="logo.png" class="logo">
+
+<h1>Controle do Acampamento</h1>
+
+</header>
+
+<div class="container">
+
+<h2>💰 Novo movimento</h2>
+
+<input type="date" id="data">
+<input type="text" id="descricao" placeholder="Descrição">
+<input type="number" id="valor" placeholder="Valor">
+
+<select id="tipo">
+<option value="entrada">Entrada</option>
+<option value="saida">Saída</option>
+</select>
+
+<input type="file" id="comprovante">
+
+<button onclick="salvar()">Salvar</button>
+
+
+<h2>📅 Histórico</h2>
+
+<div id="historico"></div>
+
+<a href="comprovantes.html">
+<button class="btnPasta">📂 Pasta de comprovantes</button>
+</a>
+
+
+<h2>👥 Jovens do Acampamento</h2>
+
+<input type="text" id="nomeJovem" placeholder="Nome">
+<input type="number" id="valorPago" placeholder="Valor pago">
+<input type="text" id="telefone" placeholder="Telefone">
+
+<button onclick="adicionarJovem()">Adicionar jovem</button>
+
+<div id="listaJovens"></div>
+
+</div>
+
+<script src="script.js"></script>
+<script>
+
+if("serviceWorker" in navigator){
+
+navigator.serviceWorker.register("service-worker.js")
+
+}
+
+</script>
+
+</body>
+</html>
